@@ -17,7 +17,7 @@ export default function Hero() {
 
       <div className="container">
 
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
           {/* LEFT */}
 
@@ -30,20 +30,21 @@ export default function Hero() {
               Available for Leadership Roles
             </div>
 
-            <h1 className="text-6xl md:text-7xl xl:text-8xl font-black leading-none">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl xl:text-8xl font-black leading-none">
               {portfolio.name.split(" ")[0]}
+
               <span className="block bg-gradient-to-r from-blue-400 via-cyan-300 to-white bg-clip-text text-transparent">
                 {portfolio.name.split(" ")[1]}
               </span>
             </h1>
 
-            <p className="mt-8 text-xl text-zinc-300 leading-9 max-w-xl">
+            <p className="mt-8 text-lg md:text-xl text-zinc-300 leading-8 md:leading-9 max-w-xl">
               {portfolio.description}
             </p>
 
-            <div className="mt-[80px] flex flex-col gap-[40px]">
+            <div className="mt-[60px] md:mt-[80px] flex flex-col gap-10">
 
-              <div className="flex flex-wrap gap-5">
+              <div className="flex flex-wrap gap-4">
 
                 <a
                   href="#experience"
@@ -63,7 +64,7 @@ export default function Hero() {
 
               </div>
 
-              <div className="grid grid-cols-3 gap-5">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
 
                 {[
                   ["9+", "Years Experience"],
@@ -74,13 +75,13 @@ export default function Hero() {
                     key={label}
                     whileHover={{ y: -6 }}
                     transition={{ duration: 0.25 }}
-                    className="glass rounded-2xl p-6"
+                    className="glass rounded-2xl p-5 text-center flex flex-col justify-center min-h-[120px]"
                   >
-                    <h2 className="text-4xl font-black text-blue-400">
+                    <h2 className="text-3xl md:text-4xl font-black text-blue-400">
                       {number}
                     </h2>
 
-                    <p className="text-zinc-400 mt-2">
+                    <p className="text-xs sm:text-sm md:text-base text-zinc-400 mt-2 leading-5">
                       {label}
                     </p>
                   </motion.div>
@@ -114,11 +115,11 @@ export default function Hero() {
           >
             <div className="relative">
 
-              <div className="absolute inset-0 rounded-full bg-blue-500/30 blur-[90px] scale-110" />
+              <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-[110px] scale-125" />
 
-              <div className="absolute inset-[-14px] rounded-full border border-blue-500/25" />
+              <div className="absolute inset-[-12px] rounded-full border border-blue-500/15" />
 
-              <div className="relative w-[390px] h-[390px] rounded-full p-[5px] bg-gradient-to-br from-blue-500 via-cyan-400 to-blue-700 shadow-[0_0_70px_rgba(59,130,246,0.35)]">
+              <div className="relative w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] lg:w-[420px] lg:h-[420px] rounded-full p-[5px] bg-gradient-to-br from-blue-500 via-cyan-400 to-blue-700 shadow-[0_0_90px_rgba(59,130,246,0.30)]">
 
                 <div className="w-full h-full rounded-full overflow-hidden border border-white/10 bg-zinc-900">
 

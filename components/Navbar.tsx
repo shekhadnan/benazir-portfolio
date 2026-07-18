@@ -89,8 +89,8 @@ export default function Navbar() {
     <>
       {/* Navbar */}
 
-      <header className="fixed inset-x-0 top-0 z-50">
-        <div className="container">
+      <header className="fixed top-0 left-0 right-0 z-50 flex justify-center">
+        <div className="w-full max-w-[1220px] px-5">
           <div
             className="
               mt-6

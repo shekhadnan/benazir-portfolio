@@ -45,17 +45,17 @@ export default function Contact() {
           const Icon = item.icon;
 
           const Card = (
-            <div className="card h-full flex items-center gap-6">
+            <div className="card h-full flex items-center gap-4 overflow-hidden">
               <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-500/10 border border-blue-500/20">
                 <Icon size={30} className="text-blue-400" />
               </div>
 
-              <div className="flex-1">
+              <div className="flex-1 min-w-0">
                 <p className="text-zinc-400 text-sm">
                   {item.title}
                 </p>
 
-                <h3 className="text-xl font-semibold mt-1">
+                <h3 className="text-lg md:text-xl font-semibold mt-1 break-all">
                   {item.value}
                 </h3>
               </div>

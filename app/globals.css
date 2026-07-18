@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --background: #09090b;
   --surface: rgba(255, 255, 255, 0.04);
@@ -137,10 +141,9 @@ section {
 }
 
 .primary-btn:hover {
-
-  transform: translateY(-2px);
-
+  transform: translateY(-3px) scale(1.02);
   background: #2563eb;
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.35);
 }
 
 .secondary-btn {
@@ -153,10 +156,9 @@ section {
 }
 
 .secondary-btn:hover {
-
-  background: rgba(255,255,255,.05);
-
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  border-color: rgb(59 130 246 / 60%);
+  background: rgba(59, 130, 246, 0.08);
 }
 
 /* ---------------- Images ---------------- */
@@ -211,4 +213,14 @@ img {
 .skill-pill:hover {
   border-color: #3b82f6;
   background: rgba(59, 130, 246, 0.1);
+}
+
+::selection {
+  background: rgba(59, 130, 246, 0.35);
+  color: white;
+}
+
+::-moz-selection {
+  background: rgba(59, 130, 246, 0.35);
+  color: white;
 }
