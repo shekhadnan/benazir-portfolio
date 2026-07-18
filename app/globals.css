@@ -1,26 +1,214 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #09090b;
+  --surface: rgba(255, 255, 255, 0.04);
+  --border: rgba(255, 255, 255, 0.08);
+  --foreground: #ffffff;
+  --muted: #a1a1aa;
+  --accent: #3b82f6;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*::selection {
+  background: var(--accent);
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.18), transparent 30%),
+    radial-gradient(circle at bottom left, rgba(6, 182, 212, 0.12), transparent 28%),
+    var(--background);
+
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+}
+
+/* ---------------- Layout ---------------- */
+
+.container {
+  width: min(1320px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+section {
+  padding: 110px 0;
+}
+
+/* ---------------- Typography ---------------- */
+
+.section-title {
+  font-size: clamp(2.3rem, 5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+
+.section-subtitle {
+  max-width: 700px;
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* ---------------- Glass Cards ---------------- */
+
+.glass,
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-radius: 24px;
+
+  padding: 32px;
+
+  transition:
+    transform .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
+}
+
+.glass:hover,
+.card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(59,130,246,.45);
+
+  box-shadow:
+    0 18px 60px rgba(37,99,235,.18);
+}
+
+/* ---------------- Buttons ---------------- */
+
+.primary-btn,
+.secondary-btn {
+
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 15px 28px;
+
+  border-radius: 9999px;
+
+  font-weight: 700;
+
+  transition: .3s;
+}
+
+.primary-btn {
+
+  background: var(--accent);
+
+  color: white;
+}
+
+.primary-btn:hover {
+
+  transform: translateY(-2px);
+
+  background: #2563eb;
+}
+
+.secondary-btn {
+
+  border: 1px solid rgba(255,255,255,.18);
+
+  background: transparent;
+
+  color: white;
+}
+
+.secondary-btn:hover {
+
+  background: rgba(255,255,255,.05);
+
+  transform: translateY(-2px);
+}
+
+/* ---------------- Images ---------------- */
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ---------------- Scrollbar ---------------- */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0b0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #52525b;
+}
+
+/* ---------------- Skill Pills ---------------- */
+
+.skill-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 22px;
+
+  border: 1px solid #3f3f46;
+  border-radius: 9999px;
+
+  background: rgba(24, 24, 27, 0.4);
+
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  transition: all 0.3s ease;
+}
+
+.skill-pill:hover {
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
 }
