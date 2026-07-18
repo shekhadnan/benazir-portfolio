@@ -8,7 +8,7 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://YOUR-DOMAIN.vercel.app"),
+  metadataBase: new URL("https://benazir-portfolio.vercel.app"),
 
   title: {
     default: "Benazir Niyariya | Business Development & Operations Leader",
@@ -16,19 +16,20 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Business Development and Operations professional with expertise in AI strategy, leadership, operational excellence, franchise expansion and business transformation.",
+    "Official portfolio of Benazir Niyariya, a Business Development and Operations professional with 9+ years of experience in leadership, AI strategy, business growth, operations management and organizational transformation.",
 
   keywords: [
     "Benazir Niyariya",
     "Business Development",
-    "Operations Management",
-    "AI Strategy",
+    "Operations Manager",
+    "Operations",
     "Leadership",
-    "Business Operations",
-    "Business Transformation",
+    "AI Strategy",
+    "Business Growth",
     "Project Management",
-    "Operational Excellence",
     "Portfolio",
+    "Business Operations",
+    "Management",
   ],
 
   authors: [
@@ -41,35 +42,45 @@ export const metadata: Metadata = {
 
   publisher: "Benazir Niyariya",
 
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://benazir-portfolio.vercel.app",
+    title:
+      "Benazir Niyariya | Business Development & Operations Leader",
+    description:
+      "Business Development, Operations Management and AI Strategy Professional with 9+ years of leadership experience.",
+
+    siteName: "Benazir Niyariya",
+
+    images: [
+      {
+        url: "/profile.jpeg",
+        width: 1200,
+        height: 1200,
+        alt: "Benazir Niyariya",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "Benazir Niyariya | Business Development & Operations Leader",
+    description:
+      "Business Development, Operations and AI Strategy Professional.",
+
+    images: ["/profile.jpeg"],
+  },
+
   robots: {
     index: true,
     follow: true,
   },
 
-  openGraph: {
-    title: "Benazir Niyariya | Business Development & Operations Leader",
-    description:
-      "Business Development and Operations professional focused on AI-driven transformation, leadership and operational excellence.",
-    url: "https://YOUR-DOMAIN.vercel.app",
-    siteName: "Benazir Niyariya Portfolio",
-    locale: "en_US",
-    type: "website",
+  alternates: {
+    canonical: "https://benazir-portfolio.vercel.app",
   },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Benazir Niyariya",
-    description:
-      "Business Development • Operations • AI Strategy",
-  },
-
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
-  },
-
-  themeColor: "#0f172a",
 };
 
 export default function RootLayout({
@@ -78,7 +89,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={geist.variable}>
+    <html
+      lang="en"
+      className={geist.variable}
+    >
       <body>{children}</body>
     </html>
   );
